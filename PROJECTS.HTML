@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="loader">
+<div class="loader-heart">💗</div>
+</div>
+
+<div class="grid-bg"></div>
+
+<div class="sidebar">
+<h2>🎀NANDANI SINGH</h2>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="skills.html">Skills</a>
+<a href="projects.html">Projects</a>
+<a href="experience.html">Experience</a>
+</div>
+
+<div class="content">
+
+<section class="card">
+<h2>Projects</h2>
+
+<div class="project-card">
+
+<h3>Library Management System</h3>
+<p><h4>Project Overview</h4>
+
+The Library Management System is a console-based C program designed to help manage books in a library.
+It performs essential operations such as adding, viewing, searching, modifying, deleting, issuing, and returning books, and stores all data permanently in binary files.
+
+This project demonstrates file handling, structures, user input validation, and menu-driven programming in C.
+
+<h4>🎯 Objectives</h4>
+<ul class="cute-list">
+<li>📚 To automate library record management</li>
+<li>🔄 To efficiently track books, issues, and returns</li>
+<li>💻 To demonstrate practical use of file I/O and data structures in C</li>
+<li>🎯 To provide a learning-level example of a real-world management system</li>
+</ul>
+<h4>⚙️ Technical Details</h4>
+<ul class="cute-list">
+<li>💻 <strong>Language Used:</strong> C Programming</li>
+<li>⚙️ <strong>Compiler:</strong> GCC (GNU Compiler Collection)</li>
+<li>🖥️ <strong>Type:</strong> Console Application</li>
+<li>💾 <strong>Data Storage:</strong> Binary files (books.dat, issues.dat)</li>
+<li>🏗️ <strong>Structures Used:</strong> Book, Issue</li>
+<li>📚 <strong>Programming Concepts Used:</strong> File handling, Structures, Loops, Conditional statements, Functions, Switch-case menu</li>
+</ul>
+<h4>🧩 Data Structures</h4>
+<h3>Data Structures</h3>
+
+<details class="dropdown">
+<summary>📚 Book Structure</summary>
+
+<pre>
+typedef struct {
+    int id;
+    char title[100];
+    char author[100];
+    char publisher[100];
+    int quantity;
+} Book;
+</pre>
+
+<ul class="cute-list">
+<li>id → Unique identifier</li>
+<li>title, author, publisher → Text info</li>
+<li>quantity → Number of available copies</li>
+</ul>
+
+</details>
+
+
+<details class="dropdown">
+<summary>📖 Issue Structure</summary>
+
+<pre>
+typedef struct {
+    int book_id;
+    char student_name[100];
+    char issue_date[20];
+} Issue;
+</pre>
+
+<ul class="cute-list">
+<li>Which book ID was issued</li>
+<li>To which student</li>
+<li>On what date</li>
+</ul>
+
+</details>
+<h4>🧠 Core Functionalities</h4>
+<h5>System Functions</h5>
+
+<ul class="cute-list">
+<li>➕ <b>Add Book</b> — Add a new book record to books.dat</li>
+
+<li>📚 <b>Display All Books</b> — View all stored books in a table format</li>
+
+<li>🔍 <b>Search by ID</b> — Search a specific book using its ID</li>
+
+<li>🔎 <b>Search by Title</b> — Search books by name or partial text</li>
+
+<li>✏️ <b>Modify Book</b> — Edit book details (title, author, publisher, quantity)</li>
+
+<li>🗑️ <b>Delete Book</b> — Remove a book permanently from the file</li>
+
+<li>📤 <b>Issue Book</b> — Issue a book to a student and reduce its quantity</li>
+
+<li>📥 <b>Return Book</b> — Return a book, increase quantity, remove issue record</li>
+
+<li>🚪 <b>Exit</b> — Quit the system safely</li>
+</ul>
+<h4>💾 Files Used</h4>
+<ul class="cute-list">
+<li>📁 <b>books.dat</b> — Stores all book details (binary format)</li>
+<li>📄 <b>issues.dat</b> — Stores records of issued books</li>
+</ul>
+
+These files ensure data persistence — meaning data remains saved even after the program is closed.
+
+<h4>🧮 Important Utility Functions</h4>
+<h3>Helper Functions</h3>
+
+<table class="cute-table">
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>clear_stdin()</td>
+<td>Clears leftover input to avoid invalid reads</td>
+</tr>
+
+<tr>
+<td>pause_and_clear()</td>
+<td>Pauses program for user to read output</td>
+</tr>
+
+<tr>
+<td>removeNewline()</td>
+<td>Removes newline from fgets() input</td>
+</tr>
+
+<tr>
+<td>bookExists()</td>
+<td>Checks if a book exists by ID</td>
+</tr>
+
+<tr>
+<td>updateBookRecord()</td>
+<td>Updates a specific book record in the file</td>
+</tr>
+
+</table>
+
+<h4>🧪 Sample Workflow</h4>
+<ul class="cute-list">
+<li>➕ Add a book → e.g. ID = 101, Title = "C Programming"</li>
+<li>📚 Display all books → confirm it’s added</li>
+<li>📤 Issue the book → enter student name & date</li>
+<li>📥 Return the book → restores quantity</li>
+<li>🚪 Exit program → data remains stored in .dat files</li>
+</ul>
+
+<h4>💡 Advantages</h4>
+<ul class="cute-list">
+<li>✅ Simple and easy to understand</li>
+<li>📁 Demonstrates real-world file-based record management</li>
+<li>💻 Works on any OS (Windows, Linux, Mac)</li>
+<li>🗄️ No database needed — uses .dat files for storage</li>
+</ul>
+<h4>⚙️ Possible Enhancements</h4>
+<ul class="cute-list">
+<li>👨‍🎓 Add student database with unique IDs</li>
+<li>⏰ Include due dates and fine calculation</li>
+<li>🔐 Implement login for admin / librarian</li>
+<li>🎨 Add color / clear-screen for better UI</li>
+<li>🌐 Convert to GUI or web-based app later</li>
+</ul>
+
+<h4>🧾 Conclusion</h4>
+
+The Library Management System in C is a beginner-to-intermediate level project that integrates data storage, file handling, and structured programming concepts.
+It effectively simulates a small-scale real-world library operation — a valuable practice for students learning C programming and file management.</p>
+</div>
+
+</section>
+
+</div>
+
+<div id="modal" class="modal">
+<div class="modal-content">
+<span class="close" onclick="closeModal()">×</span>
+<img id="modal-img">
+<h2 id="modal-title"></h2>
+<p id="modal-desc"></p>
+</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
